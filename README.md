@@ -1,13 +1,17 @@
 # JHipsterDemoBlog
 
-This application was generated using JHipster 7.3.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.3.1](https://www.jhipster.tech/documentation-archive/v7.3.1).
-
 ## Notes
 
 - My Docker Hub | https://hub.docker.com/repository/docker/benhunter/jhipsterdemoblog
 - Tutorial | https://www.youtube.com/watch?v=6lf64CctDAQ
 - Tutorial Code | https://github.com/mraible/jhipster7-demo
 - Building Docker image of my app | https://www.jhipster.tech/docker-compose/
+
+---
+
+# Notes from JHipster
+
+This application was generated using JHipster 7.3.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.3.1](https://www.jhipster.tech/documentation-archive/v7.3.1).
 
 ## Development
 
