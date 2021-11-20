@@ -1,0 +1,65 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName JHipsterDemoBlog
+    blueprints []
+    buildTool gradle
+    cacheProvider ehcache
+    clientFramework react
+    clientPackageManager npm
+    clientTheme none
+    creationTimestamp 1637322542296
+    databaseType sql
+    devDatabaseType h2Disk
+    dtoSuffix DTO
+    enableGradleEnterprise false
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    gradleEnterpriseHost ""
+    jhiPrefix jhi
+    jhipsterVersion "7.3.1"
+    jwtSecretKey "Njc2YmUwMmYxNjZlMzJiMmVmYjI2NzY3ZjBjOGQ2NjQzMTMzYzMzYWY3ODcyZDVmYjI4OTg0MWUyM2FiMmU4NTQwMjYxYjBhYzNkN2M5YWI2MDc1ZTU4YWQ0YWU0OWZjMDJlYjgxZmY4ZDY0YzgwZGFlZTA5Y2UzZjE0YzMzMmI="
+    languages [en, es]
+    messageBroker false
+    nativeLanguage en
+    otherModules []
+    packageName com.benhunter.blog
+    prodDatabaseType mysql
+    reactive false
+    searchEngine false
+    serverPort 8080
+    serviceDiscoveryType no
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks [cypress]
+    websocket false
+    withAdminUi true
+  }
+
+  entities Blog, Post, Tag
+}
+
+entity Blog {
+  name String required minlength(3)
+  handle String required minlength(2)
+}
+entity Post {
+  title String required
+  content TextBlob required
+  date Instant required
+}
+entity Tag {
+  name String required minlength(2)
+}
+relationship ManyToOne {
+  Blog{user(login)} to User
+  Post{blog(name)} to Blog
+}
+relationship ManyToMany {
+  Post{tag(name)} to Tag{blog}
+}
+
+paginate Post, Tag with infinite-scroll
